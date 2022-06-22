@@ -6996,3 +6996,10 @@ hr {
 
 .store-availability-list__phone {
   margin-bottom: 0; }
+
+
+  /*Custom Style Starts Here*/
+.image-bar > .gallery-heading {
+  margin-top: 18px;
+  text-align: center;
+}

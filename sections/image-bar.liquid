@@ -10,6 +10,10 @@
       {%- assign column_size = 'medium-up--one-quarter' -%}
   {% endcase %}
 
+  {% if section.settings.heading != "" %}
+  <h3 class="gallery-heading">{{ section.settings.heading }}</h3>
+  {% endif %}
+
   {% for block in section.blocks %}
     <div class="grid__item {{ column_size }} js" {{ block.shopify_attributes }}>
       {% if block.settings.link != blank %}
@@ -248,6 +252,11 @@
           "value": "x-large"
         }
       ]
+    },
+    {
+      "type":"text",
+      "label":"Gallery Heading",
+      "id":"heading"
     }
   ],
   "blocks": [
