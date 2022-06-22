@@ -10,8 +10,14 @@
       {%- assign column_size = 'medium-up--one-quarter' -%}
   {% endcase %}
 
+  {% if section.settings.alignment == 'center' %}
+    {%- assign text-alignment = 'text-center' -%}
+  {% else %}
+    {%- assign text-alignment = 'text-right' -%}
+  {% endif %}
+
   {% unless section.settings.heading == blank %}
-  <h3 class="gallery-heading">{{ section.settings.heading }}</h3>
+  <h3 class="gallery-heading {{text-alignment}}">{{ section.settings.heading }}</h3>
   {% endunless %}
 
   {% for block in section.blocks %}
@@ -257,6 +263,11 @@
       "type":"text",
       "label":"Gallery Heading",
       "id":"heading"
+    },
+    {
+      "type":"text",
+      "label":"Text Alignment",
+      "id":"alignment"
     }
   ],
   "blocks": [
